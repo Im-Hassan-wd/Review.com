@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans';
+}
+header{
+  background: hsl(224, 36%, 15%);
+  color: #FFF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+header h1{
+  margin: 0 5px;
+}
+header img{
+  width: 30px;
+  filter: invert(1);
+  animation: wiggle 1s linear infinite;
+  /* transform: rotate(-30deg); */
+}
+@keyframes wiggle {
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(-30deg);
+  }
+  75%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(30deg);
+  }
+}
+header ul{
+  display: flex;
+  align-items: center;
+}
+header li{
+  list-style: none;
+  padding: 0 20px;
+}
+header a{
+  text-decoration: none;
+  color: #FFF;
+}
+header a.active{
+  color: #999;
+}
