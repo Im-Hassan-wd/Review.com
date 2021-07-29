@@ -19,22 +19,7 @@ header h1{
 header img{
   width: 30px;
   filter: invert(1);
-  animation: wiggle 1s linear infinite;
-  /* transform: rotate(-30deg); */
-}
-@keyframes wiggle {
-  0%{
-    transform: rotate(0deg);
-  }
-  50%{
-    transform: rotate(-30deg);
-  }
-  75%{
-    transform: rotate(0deg);
-  }
-  100%{
-    transform: rotate(30deg);
-  }
+  transform: rotate(-30deg);
 }
 header ul{
   display: flex;
@@ -50,4 +35,72 @@ header a{
 }
 header a.active{
   color: #999;
+}
+
+/* section */
+section{
+  padding: 20px 0;
+  /* background: hsl(224, 36%, 15%); */
+}
+section ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 5px;
+}
+section li {
+  cursor: pointer;
+}
+section li.tab1{
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 3px solid hsl(224, 36%, 15%);
+  border-radius: 1px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#news_feed{
+  margin: 10px auto;
+  width: 500px;
+  padding: 20px 0;
+  /* box-shadow: 2px 2px 4px hsl(224, 36%, 15%); */
+}
+#news_feed .review{
+  padding: 10px;
+  box-shadow: 2px 2px 4px hsla(224, 36%, 15%, 0.3);
+}
+#news_feed .review-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 50%; */
+}
+
+.review-title div{
+  display: flex;
+  align-items: center;
+}
+.review-title div h2{
+  padding: 0 10px;
+  font-weight: 100;
+  font-size: 1rem;
+}
+.review-title .avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.review-text p{
+  margin: 10px 0;
+}
+.review-text img{
+  width: 100%;
+  height: 400px;
+}
+.about li:nth-child(1){
+  cursor: auto;
+}
+.about span{
+  padding: 0 5px;
+  font-weight: bold;
 }
