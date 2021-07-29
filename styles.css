@@ -61,13 +61,13 @@ section li.tab{
 }
 #news_feed{
   margin: 10px auto;
-  width: 500px;
+  max-width: 500px;
   padding: 20px 0;
   /* box-shadow: 2px 2px 4px hsl(224, 36%, 15%); */
 }
 #news_feed .review{
   padding: 10px;
-  margin: 100px 0;
+  margin-bottom: 100px;
   box-shadow: 2px 2px 4px hsla(224, 36%, 15%, 0.3);
 }
 #news_feed .review-title{
@@ -141,7 +141,9 @@ button{
   cursor: pointer;
 }
 @media(max-width: 375px){
-  /* header h1 */
+  header h1{
+    font-weight: 100;
+  }
   header ul{
     display: none
   }
