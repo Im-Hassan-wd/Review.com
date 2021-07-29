@@ -67,6 +67,7 @@ section li.tab{
 }
 #news_feed .review{
   padding: 10px;
+  margin: 100px 0;
   box-shadow: 2px 2px 4px hsla(224, 36%, 15%, 0.3);
 }
 #news_feed .review-title{
@@ -106,12 +107,14 @@ section li.tab{
 }
 /* add a review*/
 form{
-  margin: 0 auto;
-  width: 500px;
+  margin: 50px auto;
   display: none;
+  width: 100%;
+  max-width: 500px;
 }
 form h2 {
   text-align: center;
+  color: hsl(231, 69%, 60%);
 }
 form div {
   margin: 50px 0;
@@ -123,6 +126,23 @@ form label{
 form input{
   border: none;
   border-bottom: 2px solid hsl(224, 36%, 15%);
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   outline: none;
+}
+button{
+  border: 1px solid hsl(231, 69%, 60%);
+  background: hsl(231, 69%, 60%);
+  border-radius: 3px;
+  padding: 7px 20px;
+  text-align: center;
+  box-shadow: 2px 2px 4px hsla(229, 31%, 21%, 0.2);
+  color: #FFF;
+  cursor: pointer;
+}
+@media(max-width: 375px){
+  /* header h1 */
+  header ul{
+    display: none
+  }
 }
