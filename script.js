@@ -1,7 +1,8 @@
 const reviewPage = document.querySelector('section');
 const news = document.querySelector('.tab');
 const createReview = document.querySelector('.tab2');
-const newsFeed = document.querySelector('#news_feed')
+const newsFeed = document.querySelector('#news_feed');
+const message = document.querySelector('.msg');
 
 reviewPage.addEventListener('click', e => {
     if(e.target.innerHTML === 'News Feed'){
@@ -25,15 +26,16 @@ reviewPage.addEventListener('click', e => {
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault()
+  e.preventDefault();
+
   const description = form['description'].value;
   const reviewImage = form['review-image'].value;
-  console.log(description, reviewImage);
 
   let newReview = `
+    <div id="news_feed">
       <div class="review">
         <div class="review-title">
-          <div>
+          <div class="">
             <img src="img/linda-avatar.jpg" alt="" class="avatar">
             <h2>Linda Bryan</h2>
           </div>
@@ -41,18 +43,20 @@ form.addEventListener('submit', (e) => {
         </div>
         <div class="review-text">
           <p>${description}</p>
-          <img src="${reviewImage}" alt="">
-          <div class="about">
-            <ul>
-              <li>1 hour ago<span></span></li>
-              <li>likes<span>2</span></li>
-              <li>comments<span>7</span></li>
-            </ul>
-          </div>
+          <img src="img/wireframe.jpg" alt="">
         </div>
       </div>
-    `;
+    </div>
+  `;
+  localStorage.setItem('review', newReview);
+  newsFeed.innerHTML += newReview;
+  message.style.height = 'initial';
 
-    localStorage.setItem('review', newReview);
-    newsFeed.innerHTML += localStorage.getItem('review');
+  setTimeout(()=> {
+    message.style.height = '0';
+  },2000);
 });
+
+if(localStorage.getItem('review')){
+  newsFeed.innerHTML += localStorage.getItem('review');
+}
