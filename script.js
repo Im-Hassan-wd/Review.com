@@ -3,6 +3,18 @@ const news = document.querySelector('.tab');
 const createReview = document.querySelector('.tab2');
 const newsFeed = document.querySelector('#news_feed');
 const message = document.querySelector('.msg');
+const navigation = document.querySelector('header nav');
+const burger = document.querySelector('.burger');
+const mainPage = document.querySelector('main');
+
+burger.addEventListener('click', () => {
+  navigation.classList.toggle('active');
+  burger.classList.toggle('active');
+});
+
+mainPage.addEventListener('click', () => {
+  navigation.classList.remove('active');
+});
 
 reviewPage.addEventListener('click', e => {
     if(e.target.innerHTML === 'News Feed'){

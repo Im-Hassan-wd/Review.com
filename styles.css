@@ -26,10 +26,25 @@ header .logo img{
   transform: rotate(-30deg);
 }
 header .burger{
-  filter: invert(1);
-  width: 30px;
   display: none;
+  background: url(img/burger.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  filter: invert(1);
   cursor: pointer;
+  transition: 0.5s ease;
+}
+.burger.active{
+  background: url(img/close.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+  transition: 0.5s ease;
 }
 header ul{
   display: flex;
@@ -72,6 +87,9 @@ header a.active{
 .user-image span{
   padding: 0 10px;
 }
+.user-avatar{
+  display: none;
+}
 @media screen and (max-width:777px){
   header .logo span{
     display: none;
@@ -79,12 +97,44 @@ header a.active{
   header .burger {
     display: initial;
   }
-  header nav,
+  header nav {
+    background: hsl(224, 36%, 15%);
+    position: absolute;
+    top: 40px;
+    left: 0;
+    display: block;
+    width: 100%;
+    padding: 10px 50px;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+  }
+  header nav.active {
+    height: 200px;
+    overflow: none;
+  }
+  header ul {
+    display: block;
+  }
+  header ul li {
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+  }
   .user-image{
     display: none;
   }
   .user {
     border: none;
+  }
+  .user-avatar {
+    display: flex;
+    padding-top: 10px;
+  }
+  .user-avatar img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
   }
 }
 @media screen and (max-width:375px){
@@ -199,7 +249,7 @@ form input{
   max-width: 500px;
   outline: none;
 }
-button{
+form button{
   border: 1px solid hsl(231, 69%, 60%);
   background: hsl(231, 69%, 60%);
   border-radius: 3px;
@@ -210,12 +260,6 @@ button{
   cursor: pointer;
 }
 @media(max-width: 375px){
-  header h1{
-    font-weight: 100;
-  }
-  header ul{
-    display: none
-  }
 }
 .msg{
   height: 0;
