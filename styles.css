@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap'); */
 *{
   margin: 0;
   padding: 0;
@@ -13,13 +13,23 @@ header{
   align-items: center;
   padding: 10px 50px;
 }
+header .logo {
+  align-self: center;
+}
 header .logo h1{
   margin: 0 5px;
+  font-size: 1.5rem;
 }
 header .logo img{
-  width: 30px;
+  width: 25px;
   filter: invert(1);
   transform: rotate(-30deg);
+}
+header .burger{
+  filter: invert(1);
+  width: 30px;
+  display: none;
+  cursor: pointer;
 }
 header ul{
   display: flex;
@@ -62,6 +72,26 @@ header a.active{
 .user-image span{
   padding: 0 10px;
 }
+@media screen and (max-width:777px){
+  header .logo span{
+    display: none;
+  }
+  header .burger {
+    display: initial;
+  }
+  header nav,
+  .user-image{
+    display: none;
+  }
+  .user {
+    border: none;
+  }
+}
+@media screen and (max-width:375px){
+  header {
+    padding: 10px;
+  }
+}
 /* section */
 section{
   padding: 20px 0;
@@ -101,7 +131,7 @@ section li.tab{
   align-items: center;
   /* width: 50%; */
 }
-.review-title div{
+.review-head{
   display: flex;
   align-items: center;
 }
@@ -111,8 +141,8 @@ section li.tab{
   font-size: 1rem;
 }
 .review-title .avatar{
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
 }
 .review-text p{
@@ -126,10 +156,15 @@ section li.tab{
   cursor: pointer;
 }
 .location{
-  /* margin: 0 50px; */
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
 }
-.location span{
-  font-size: 0.8rem;
+.location small{
+  font-size: 0.7rem;
+}
+.location img{
+  width: 13px;
 }
 .about li:nth-child(1){
   cursor: auto;

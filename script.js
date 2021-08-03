@@ -32,19 +32,23 @@ form.addEventListener('submit', (e) => {
   const reviewImage = form['review-image'].value;
 
   let newReview = `
-    <div id="news_feed">
-      <div class="review">
-        <div class="review-title">
+    <div class="review">
+      <div class="review-title">
+        <div class="review-head">
+          <img src="img/linda-avatar.jpg" alt="" class="avatar">
           <div class="">
-            <img src="img/linda-avatar.jpg" alt="" class="avatar">
             <h2>Linda Bryan</h2>
+            <div class="location">
+              <img src="img/location.svg" alt="">
+              <small>Nigeria</small>
+            </div>
           </div>
-          <img src="img/option.svg" alt="">
         </div>
-        <div class="review-text">
-          <p>${description}</p>
-          <img src="img/wireframe.jpg" alt="">
-        </div>
+        <img src="img/option.svg" alt="" class="option">
+      </div>
+      <div class="review-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices enim in nibh rhoncus suscipit. Sed posuere tincidunt augue. Sed facilisis tempus nulla id varius. Cras tempus lorem vel maximus ultrices.</p>
+        <img src="img/wireframe.jpg" alt="">
       </div>
     </div>
   `;
