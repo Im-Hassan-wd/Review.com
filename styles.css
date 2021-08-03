@@ -36,6 +36,8 @@ header .burger{
   filter: invert(1);
   cursor: pointer;
   transition: 0.5s ease;
+  border: none;
+  outline-color: #333;
 }
 .burger.active{
   background: url(img/close.svg);
